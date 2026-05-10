@@ -1,0 +1,67 @@
+`timescale 1ns/1ps
+
+module uart_top(
+
+    input clk,
+    input rst_n,
+    input tx_start,
+    input [7:0] tx_data,
+
+    output [7:0] rx_data,
+    output rx_done,
+    output tx_busy
+
+);
+
+wire baud_tick;
+wire half_baud;
+
+wire tx;
+
+
+// Baud Generator
+baud_gen BAUD_GEN (
+
+    .clk(clk),
+    .rst_n(rst_n),
+
+    .baud_tick(baud_tick),
+    .half_baud(half_baud)
+
+);
+
+
+// UART TX
+uart_tx UART_TX (
+
+    .clk(clk),
+    .rst_n(rst_n),
+
+    .baud_tick(baud_tick),
+
+    .tx_start(tx_start),
+    .data(tx_data),
+
+    .tx(tx),
+    .tx_busy(tx_busy)
+
+);
+
+
+// UART RX
+uart_rx UART_RX (
+
+    .clk(clk),
+    .rst_n(rst_n),
+
+    .rx(tx),
+
+    .baud_tick(baud_tick),
+    .half_baud(half_baud),
+
+    .data(rx_data),
+    .rx_done(rx_done)
+
+);
+
+endmodule
