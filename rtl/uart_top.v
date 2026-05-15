@@ -15,6 +15,7 @@ module uart_top(
 
 wire baud_tick;
 wire half_baud;
+wire [3:0]state;
 
 wire tx;
 
@@ -44,6 +45,18 @@ uart_tx UART_TX (
 
     .tx(tx),
     .tx_busy(tx_busy)
+
+);
+
+//ILA
+ila_0 ILA_DEBUG (
+
+    .clk(clk),
+
+    .probe0(uart_rx),
+    .probe1(uart_tx),
+    .probe2(rx_done),
+    .probe3(state)
 
 );
 
