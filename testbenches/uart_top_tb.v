@@ -30,8 +30,20 @@ uart_top DUT (
 
 
 // Clock generation
-always #10 clk = ~clk;
+always #5 clk = ~clk;
 
+initial
+begin
+    $monitor(
+        "TIME=%0t BAUD=%b TX_START=%b TX_BUSY=%b RX_DONE=%b RX_DATA=%h",
+        $time,
+        DUT.baud_tick,
+        tx_start,
+        tx_busy,
+        rx_done,
+        rx_data
+    );
+end
 
 initial
 begin
@@ -47,17 +59,19 @@ begin
     rst_n = 1;
 
     // Wait some time
-    #200000;
+    #3000000;
 
     // Send A5
     tx_data = 8'hA5;
-    tx_start = 1;
 
-    wait(tx_busy);
-    tx_start = 0;
+tx_start = 1;
+
+#200000;
+
+tx_start = 0;
 
     // Wait for reception
-    #2000000;
+    #15000000;
 
     // Display result
     if(rx_data == 8'hA5)
