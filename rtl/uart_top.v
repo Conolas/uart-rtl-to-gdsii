@@ -48,18 +48,6 @@ uart_tx UART_TX (
 
 );
 
-//ILA
-ila_0 ILA_DEBUG (
-
-    .clk(clk),
-
-    .probe0(uart_rx),
-    .probe1(uart_tx),
-    .probe2(rx_done),
-    .probe3(state)
-
-);
-
 
 // UART RX
 uart_rx UART_RX (

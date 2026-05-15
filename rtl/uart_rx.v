@@ -10,6 +10,7 @@ reg [1:0] state;
 reg [2:0] bit_index = 3'd0;
 reg rx_sync1;
 reg rx_sync2;
+reg rx_prev;
 reg first_tick;
 
 localparam IDLE  = 2'd0;
@@ -34,11 +35,21 @@ end
 always @(posedge clk or negedge rst_n)
 begin
     if(!rst_n)
+        rx_prev <= 1'b1;
+
+    else
+        rx_prev <= rx_sync2;
+end
+
+always @(posedge clk or negedge rst_n)
+begin
+    if(!rst_n)
     begin
         state <= IDLE;
         bit_index <= 3'd0;
         rx_done <= 1'b0;
         first_tick <= 1'b0;
+        data <= 8'd0;
     end
 
     else
@@ -49,8 +60,8 @@ begin
 
             IDLE :
             begin
-                if(!rx_sync2)
-                    state <= START;
+                if(rx_prev && !rx_sync2)
+                     state <= START;
             end
 
 
