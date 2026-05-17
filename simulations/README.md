@@ -1,30 +1,31 @@
-# Documentation Directory
+# Simulation Results and Waveforms
 
-This directory stores project documentation, waveforms, reports, and design images.
+This directory contains simulation waveforms, timing captures, and verification images for the UART design.
 
----
+## Subdirectories
 
-# Structure
+### waveforms/
+Contains:
+- VCD waveform captures
+- Timing verification outputs
 
-| Folder | Description |
-|---|---|
-| images/ | Architecture diagrams and screenshots |
-| waveforms/ | GTKWave captures |
-| reports/ | Synthesis and implementation reports |
+### images/
+Contains:
+- GTKWave screenshots
+- Simulation result captures
+- Verification visuals
 
----
+## Verification Goals
 
-# Planned Documentation
+The simulations verify:
+- UART transmission
+- UART reception
+- Baud synchronization
+- FSM operation
+- Data integrity
+- Timing correctness
 
-- UART architecture diagrams
-- FSM state diagrams
-- Simulation waveforms
-- OpenROAD physical design screenshots
-- Timing reports
-- Area utilization reports
+## Tools Used
 
----
-
-# Goal
-
-To document the complete RTL-to-GDSII ASIC implementation flow.
+- Icarus Verilog
+- GTKWave
