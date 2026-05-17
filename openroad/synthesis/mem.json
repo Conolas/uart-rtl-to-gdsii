@@ -1,0 +1,3413 @@
+{
+  "creator": "Yosys 0.63 (git sha1 70a11c6bf, g++ 11.4.0-1ubuntu1~22.04.3 -fPIC -O3)",
+  "modules": {
+    "uart_top": {
+      "attributes": {
+        "hdlname": "uart_top",
+        "top": "00000000000000000000000000000001",
+        "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_top.v:3.1-68.10"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "rst_n": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "tx_start": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "tx_data": {
+          "direction": "input",
+          "bits": [ 5, 6, 7, 8, 9, 10, 11, 12 ]
+        },
+        "rx_data": {
+          "direction": "output",
+          "bits": [ 13, 14, 15, 16, 17, 18, 19, 20 ]
+        },
+        "rx_done": {
+          "direction": "output",
+          "bits": [ 21 ]
+        },
+        "tx_busy": {
+          "direction": "output",
+          "bits": [ 22 ]
+        }
+      },
+      "cells": {
+        "$auto$alumacc.cc:512:replace_alu$5905": {
+          "hide_name": 1,
+          "type": "$alu",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:54.46-54.62"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "BI": "input",
+            "CI": "input",
+            "CO": "output",
+            "X": "output",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1" ],
+            "B": [ 23, 24, 25 ],
+            "BI": [ "0" ],
+            "CI": [ "0" ],
+            "CO": [ 26, 27, 28 ],
+            "X": [ 29, 30, 31 ],
+            "Y": [ 32, 33, 34 ]
+          }
+        },
+        "$auto$alumacc.cc:512:replace_alu$5908": {
+          "hide_name": 1,
+          "type": "$alu",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94.25-94.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "BI": "input",
+            "CI": "input",
+            "CO": "output",
+            "X": "output",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ ],
+            "B": [ 35, 36, 37 ],
+            "BI": [ "1" ],
+            "CI": [ "1" ],
+            "CO": [ 38, 39, 40, 41 ],
+            "X": [ 42, 43, 44, 45 ],
+            "Y": [ 46, 47, 48, 49 ]
+          }
+        },
+        "$auto$alumacc.cc:512:replace_alu$5911": {
+          "hide_name": 1,
+          "type": "$alu",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000001110",
+            "Y_WIDTH": "00000000000000000000000000001110"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:34.22-34.35"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "BI": "input",
+            "CI": "input",
+            "CO": "output",
+            "X": "output",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1" ],
+            "B": [ 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63 ],
+            "BI": [ "0" ],
+            "CI": [ "0" ],
+            "CO": [ 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77 ],
+            "X": [ 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91 ],
+            "Y": [ 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105 ]
+          }
+        },
+        "$auto$alumacc.cc:512:replace_alu$5914": {
+          "hide_name": 1,
+          "type": "$alu",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:103.42-103.58"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "BI": "input",
+            "CI": "input",
+            "CO": "output",
+            "X": "output",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1" ],
+            "B": [ 35, 36, 37 ],
+            "BI": [ "0" ],
+            "CI": [ "0" ],
+            "CO": [ 106, 107, 108 ],
+            "X": [ 109, 110, 111 ],
+            "Y": [ 112, 113, 114 ]
+          }
+        },
+        "$auto$ff.cc:337:slice$5862": {
+          "hide_name": 1,
+          "type": "$adffe",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "00000000",
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "EN_POLARITY": "00000000000000000000000000000001",
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:44.1-126.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "EN": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 115, 116, 117, 118, 119, 120, 121, 122 ],
+            "EN": [ 123 ],
+            "Q": [ 13, 14, 15, 16, 17, 18, 19, 20 ]
+          }
+        },
+        "$auto$ff.cc:337:slice$5871": {
+          "hide_name": 1,
+          "type": "$adffe",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "1",
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "EN_POLARITY": "00000000000000000000000000000001",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:18.1-68.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "EN": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 124 ],
+            "EN": [ 125 ],
+            "Q": [ 126 ]
+          }
+        },
+        "$auto$ff.cc:337:slice$5872": {
+          "hide_name": 1,
+          "type": "$dffe",
+          "parameters": {
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "EN_POLARITY": "00000000000000000000000000000001",
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:18.1-68.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "EN": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 5, 6, 7, 8, 9, 10, 11, 12 ],
+            "EN": [ 127 ],
+            "Q": [ 128, 129, 130, 131, 132, 133, 134, 135 ]
+          }
+        },
+        "$auto$ff.cc:337:slice$5875": {
+          "hide_name": 1,
+          "type": "$adffe",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "EN_POLARITY": "00000000000000000000000000000001",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:18.1-68.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "EN": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 136 ],
+            "EN": [ 137 ],
+            "Q": [ 22 ]
+          }
+        },
+        "$auto$ff.cc:337:slice$5880": {
+          "hide_name": 1,
+          "type": "$adffe",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "000",
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "EN_POLARITY": "00000000000000000000000000000001",
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:18.1-68.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "EN": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 138, 139, 140 ],
+            "EN": [ 141 ],
+            "Q": [ 23, 24, 25 ]
+          }
+        },
+        "$auto$ff.cc:337:slice$5885": {
+          "hide_name": 1,
+          "type": "$adffe",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "000",
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "EN_POLARITY": "00000000000000000000000000000001",
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:44.1-126.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "EN": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 142, 143, 144 ],
+            "EN": [ 145 ],
+            "Q": [ 35, 36, 37 ]
+          }
+        },
+        "$auto$ff.cc:337:slice$5896": {
+          "hide_name": 1,
+          "type": "$adffe",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "EN_POLARITY": "00000000000000000000000000000001",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:44.1-126.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "EN": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 146 ],
+            "EN": [ 147 ],
+            "Q": [ 148 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$5773": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 149 ],
+            "B": [ 150 ],
+            "Y": [ 151 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$5777": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 152 ],
+            "B": [ 150 ],
+            "Y": [ 153 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$5781": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 125 ],
+            "B": [ 154 ],
+            "Y": [ 155 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$5786": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 152 ],
+            "B": [ 156 ],
+            "Y": [ 157 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$5790": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 158 ],
+            "B": [ 156 ],
+            "Y": [ 159 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$5794": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 125 ],
+            "B": [ 160 ],
+            "Y": [ 161 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$5799": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 162 ],
+            "B": [ 150 ],
+            "Y": [ 163 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$5803": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 152 ],
+            "B": [ 160 ],
+            "Y": [ 164 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$5808": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 152 ],
+            "B": [ 154 ],
+            "Y": [ 165 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$5812": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 166 ],
+            "B": [ 156 ],
+            "Y": [ 167 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$5821": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 125 ],
+            "B": [ 168 ],
+            "Y": [ 169 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$5825": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 170 ],
+            "B": [ 171 ],
+            "Y": [ 172 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$5830": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 173 ],
+            "B": [ 174 ],
+            "Y": [ 175 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$5834": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 152 ],
+            "B": [ 176 ],
+            "Y": [ 177 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$5838": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 178 ],
+            "B": [ 176 ],
+            "Y": [ 179 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$5842": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 180 ],
+            "B": [ 176 ],
+            "Y": [ 181 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$5847": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 182 ],
+            "B": [ 174 ],
+            "Y": [ 183 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$5851": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 184 ],
+            "B": [ 171 ],
+            "Y": [ 185 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$5856": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 152 ],
+            "B": [ 168 ],
+            "Y": [ 186 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$5860": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 187 ],
+            "B": [ 176 ],
+            "Y": [ 188 ]
+          }
+        },
+        "$auto$fsm_map.cc:144:implement_pattern_cache$5782": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 155, 153, 151 ],
+            "Y": [ 189 ]
+          }
+        },
+        "$auto$fsm_map.cc:144:implement_pattern_cache$5795": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 161, 159, 157 ],
+            "Y": [ 190 ]
+          }
+        },
+        "$auto$fsm_map.cc:144:implement_pattern_cache$5804": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 164, 163 ],
+            "Y": [ 191 ]
+          }
+        },
+        "$auto$fsm_map.cc:144:implement_pattern_cache$5813": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 167, 165 ],
+            "Y": [ 192 ]
+          }
+        },
+        "$auto$fsm_map.cc:144:implement_pattern_cache$5826": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 172, 169 ],
+            "Y": [ 193 ]
+          }
+        },
+        "$auto$fsm_map.cc:144:implement_pattern_cache$5843": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 181, 179, 177, 175 ],
+            "Y": [ 194 ]
+          }
+        },
+        "$auto$fsm_map.cc:144:implement_pattern_cache$5852": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 185, 183 ],
+            "Y": [ 195 ]
+          }
+        },
+        "$auto$fsm_map.cc:144:implement_pattern_cache$5861": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 188, 186 ],
+            "Y": [ 196 ]
+          }
+        },
+        "$auto$fsm_map.cc:172:map_fsm$5767": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "0",
+            "ARST_VALUE": "0001",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 189, 190, 191, 192 ],
+            "Q": [ 150, 156, 160, 154 ]
+          }
+        },
+        "$auto$fsm_map.cc:172:map_fsm$5815": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "0",
+            "ARST_VALUE": "0001",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 193, 194, 195, 196 ],
+            "Q": [ 171, 176, 174, 168 ]
+          }
+        },
+        "$auto$fsm_map.cc:77:implement_pattern_cache$5771": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 4, 125 ],
+            "B": [ "0", "1" ],
+            "Y": [ 149 ]
+          }
+        },
+        "$auto$fsm_map.cc:77:implement_pattern_cache$5788": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 125, 197 ],
+            "B": [ "1" ],
+            "Y": [ 158 ]
+          }
+        },
+        "$auto$fsm_map.cc:77:implement_pattern_cache$5797": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 4, 125 ],
+            "B": [ "1", "1" ],
+            "Y": [ 162 ]
+          }
+        },
+        "$auto$fsm_map.cc:77:implement_pattern_cache$5810": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 125, 197 ],
+            "B": [ "1", "1" ],
+            "Y": [ 166 ]
+          }
+        },
+        "$auto$fsm_map.cc:77:implement_pattern_cache$5823": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 184 ],
+            "Y": [ 170 ]
+          }
+        },
+        "$auto$fsm_map.cc:77:implement_pattern_cache$5832": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 125 ],
+            "Y": [ 152 ]
+          }
+        },
+        "$auto$fsm_map.cc:77:implement_pattern_cache$5836": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 125, 198, 148 ],
+            "B": [ "1" ],
+            "Y": [ 178 ]
+          }
+        },
+        "$auto$fsm_map.cc:77:implement_pattern_cache$5840": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 125, 148 ],
+            "B": [ "1", "1" ],
+            "Y": [ 180 ]
+          }
+        },
+        "$auto$fsm_map.cc:77:implement_pattern_cache$5845": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 173 ],
+            "Y": [ 182 ]
+          }
+        },
+        "$auto$fsm_map.cc:77:implement_pattern_cache$5858": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 125, 198, 148 ],
+            "B": [ "1", "1" ],
+            "Y": [ 187 ]
+          }
+        },
+        "$auto$opt_dff.cc:235:make_patterns_logic$5864": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 199 ],
+            "Y": [ 200 ]
+          }
+        },
+        "$auto$opt_dff.cc:235:make_patterns_logic$5877": {
+          "hide_name": 1,
+          "type": "$reduce_bool",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 201, 160 ],
+            "Y": [ 202 ]
+          }
+        },
+        "$auto$opt_dff.cc:235:make_patterns_logic$5882": {
+          "hide_name": 1,
+          "type": "$reduce_bool",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 156, 160 ],
+            "Y": [ 203 ]
+          }
+        },
+        "$auto$opt_dff.cc:235:make_patterns_logic$5887": {
+          "hide_name": 1,
+          "type": "$ne",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 173, 174 ],
+            "B": [ "0", "1" ],
+            "Y": [ 204 ]
+          }
+        },
+        "$auto$opt_dff.cc:235:make_patterns_logic$5889": {
+          "hide_name": 1,
+          "type": "$ne",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 125, 176 ],
+            "B": [ "0", "1" ],
+            "Y": [ 205 ]
+          }
+        },
+        "$auto$opt_dff.cc:235:make_patterns_logic$5891": {
+          "hide_name": 1,
+          "type": "$ne",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 148, 176 ],
+            "B": [ "1", "1" ],
+            "Y": [ 206 ]
+          }
+        },
+        "$auto$opt_dff.cc:235:make_patterns_logic$5893": {
+          "hide_name": 1,
+          "type": "$reduce_bool",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 176, 174 ],
+            "Y": [ 207 ]
+          }
+        },
+        "$auto$opt_dff.cc:252:make_patterns_logic$5870": {
+          "hide_name": 1,
+          "type": "$reduce_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 206, 205, 200 ],
+            "Y": [ 123 ]
+          }
+        },
+        "$auto$opt_dff.cc:252:make_patterns_logic$5874": {
+          "hide_name": 1,
+          "type": "$reduce_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3, 125, 160 ],
+            "Y": [ 127 ]
+          }
+        },
+        "$auto$opt_dff.cc:252:make_patterns_logic$5879": {
+          "hide_name": 1,
+          "type": "$reduce_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 202, 125 ],
+            "Y": [ 137 ]
+          }
+        },
+        "$auto$opt_dff.cc:252:make_patterns_logic$5884": {
+          "hide_name": 1,
+          "type": "$reduce_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 203, 125 ],
+            "Y": [ 141 ]
+          }
+        },
+        "$auto$opt_dff.cc:252:make_patterns_logic$5895": {
+          "hide_name": 1,
+          "type": "$reduce_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 207, 204, 206, 205 ],
+            "Y": [ 145 ]
+          }
+        },
+        "$auto$opt_dff.cc:252:make_patterns_logic$5904": {
+          "hide_name": 1,
+          "type": "$reduce_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 207, 204, 205 ],
+            "Y": [ 147 ]
+          }
+        },
+        "$auto$opt_reduce.cc:131:opt_pmux$5750": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 150, 154 ],
+            "Y": [ 201 ]
+          }
+        },
+        "$auto$opt_reduce.cc:131:opt_pmux$5752": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 171, 174, 168 ],
+            "Y": [ 199 ]
+          }
+        },
+        "$flatten\\BAUD_GEN.$eq$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:24$5508": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001110",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000001101",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:24.12-24.29"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63 ],
+            "B": [ "1", "1", "1", "0", "1", "0", "1", "0", "0", "0", "1", "0", "1" ],
+            "Y": [ 208 ]
+          }
+        },
+        "$flatten\\BAUD_GEN.$eq$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:27$5509": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001110",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000001110",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:27.12-27.30"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63 ],
+            "B": [ "1", "0", "0", "0", "1", "1", "0", "1", "0", "0", "0", "1", "0", "1" ],
+            "Y": [ 209 ]
+          }
+        },
+        "$flatten\\BAUD_GEN.$procdff$5734": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:10.1-37.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 210 ],
+            "Q": [ 125 ]
+          }
+        },
+        "$flatten\\BAUD_GEN.$procdff$5739": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:10.1-37.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 211 ],
+            "Q": [ 173 ]
+          }
+        },
+        "$flatten\\BAUD_GEN.$procdff$5744": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "00000000000000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000001110"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:10.1-37.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225 ],
+            "Q": [ 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63 ]
+          }
+        },
+        "$flatten\\BAUD_GEN.$procmux$5646": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001110"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:27.12-27.30|/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:27.9-35.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105 ],
+            "B": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "S": [ 209 ],
+            "Y": [ 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225 ]
+          }
+        },
+        "$flatten\\BAUD_GEN.$procmux$5648": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:24.12-24.29|/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:24.9-25.31"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ "1" ],
+            "S": [ 208 ],
+            "Y": [ 211 ]
+          }
+        },
+        "$flatten\\BAUD_GEN.$procmux$5651": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:27.12-27.30|/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:27.9-35.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ "1" ],
+            "S": [ 209 ],
+            "Y": [ 210 ]
+          }
+        },
+        "$flatten\\UART_RX.$and$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94$5493": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94.25-94.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 13, 14, 15, 16, 17, 18, 19, 20 ],
+            "B": [ 226, 227, 228, 229, 230, 231, 232, 233 ],
+            "Y": [ 234, 235, 236, 237, 238, 239, 240, 241 ]
+          }
+        },
+        "$flatten\\UART_RX.$eq$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:96$5497": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:96.28-96.45"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 35, 36, 37 ],
+            "B": [ "1", "1", "1" ],
+            "Y": [ 198 ]
+          }
+        },
+        "$flatten\\UART_RX.$logic_and$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:63$5485": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:63.20-63.40"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 242 ],
+            "B": [ 243 ],
+            "Y": [ 184 ]
+          }
+        },
+        "$flatten\\UART_RX.$logic_not$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:63$5484": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:63.31-63.40"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 244 ],
+            "Y": [ 243 ]
+          }
+        },
+        "$flatten\\UART_RX.$not$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94$5492": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94.25-94.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 245, 246, 247, 248, 249, 250, 251, 252 ],
+            "Y": [ 226, 227, 228, 229, 230, 231, 232, 233 ]
+          }
+        },
+        "$flatten\\UART_RX.$or$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94$5496": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94.25-94.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 234, 235, 236, 237, 238, 239, 240, 241 ],
+            "B": [ 253, 254, 255, 256, 257, 258, 259, 260 ],
+            "Y": [ 261, 262, 263, 264, 265, 266, 267, 268 ]
+          }
+        },
+        "$flatten\\UART_RX.$procdff$5684": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:44.1-126.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 269 ],
+            "Q": [ 21 ]
+          }
+        },
+        "$flatten\\UART_RX.$procdff$5719": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "1",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:35.1-42.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 244 ],
+            "Q": [ 242 ]
+          }
+        },
+        "$flatten\\UART_RX.$procdff$5724": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "1",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:21.1-33.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 126 ],
+            "Q": [ 270 ]
+          }
+        },
+        "$flatten\\UART_RX.$procdff$5729": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "1",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:21.1-33.4"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 270 ],
+            "Q": [ 244 ]
+          }
+        },
+        "$flatten\\UART_RX.$procmux$5555": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:87.24-87.34|/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:87.21-104.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 261, 262, 263, 264, 265, 266, 267, 268 ],
+            "B": [ "x", "x", "x", "x", "x", "x", "x", "x" ],
+            "S": [ 148 ],
+            "Y": [ 271, 272, 273, 274, 275, 276, 277, 278 ]
+          }
+        },
+        "$flatten\\UART_RX.$procmux$5572": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:83.20-83.29|/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:83.17-105.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x", "x", "x", "x", "x", "x" ],
+            "B": [ 271, 272, 273, 274, 275, 276, 277, 278 ],
+            "S": [ 125 ],
+            "Y": [ 279, 280, 281, 282, 283, 284, 285, 286 ]
+          }
+        },
+        "$flatten\\UART_RX.$procmux$5582": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:106.16-106.16|/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:59.9-124.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x", "x", "x", "x", "x", "x" ],
+            "B": [ 279, 280, 281, 282, 283, 284, 285, 286 ],
+            "S": [ 176 ],
+            "Y": [ 115, 116, 117, 118, 119, 120, 121, 122 ]
+          }
+        },
+        "$flatten\\UART_RX.$procmux$5592": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:113.24-113.32|/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:113.21-114.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ "1" ],
+            "S": [ 244 ],
+            "Y": [ 287 ]
+          }
+        },
+        "$flatten\\UART_RX.$procmux$5594": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:111.20-111.29|/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:111.17-117.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 287 ],
+            "S": [ 125 ],
+            "Y": [ 288 ]
+          }
+        },
+        "$flatten\\UART_RX.$procmux$5596": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:106.16-106.16|/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:59.9-124.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 288 ],
+            "S": [ 168 ],
+            "Y": [ 269 ]
+          }
+        },
+        "$flatten\\UART_RX.$procmux$5603": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:83.20-83.29|/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:83.17-105.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x" ],
+            "B": [ "0" ],
+            "S": [ 125 ],
+            "Y": [ 289 ]
+          }
+        },
+        "$flatten\\UART_RX.$procmux$5605": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000010",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:78.16-78.16|/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:59.9-124.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x" ],
+            "B": [ 289, 290 ],
+            "S": [ 176, 174 ],
+            "Y": [ 146 ]
+          }
+        },
+        "$flatten\\UART_RX.$procmux$5607": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:70.20-70.29|/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:70.17-77.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x" ],
+            "B": [ "1" ],
+            "S": [ 173 ],
+            "Y": [ 290 ]
+          }
+        },
+        "$flatten\\UART_RX.$procmux$5613": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:96.28-96.45|/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:96.25-103.59"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 112, 113, 114 ],
+            "B": [ "0", "0", "0" ],
+            "S": [ 198 ],
+            "Y": [ 291, 292, 293 ]
+          }
+        },
+        "$flatten\\UART_RX.$procmux$5616": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:87.24-87.34|/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:87.21-104.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 291, 292, 293 ],
+            "B": [ "x", "x", "x" ],
+            "S": [ 148 ],
+            "Y": [ 294, 295, 296 ]
+          }
+        },
+        "$flatten\\UART_RX.$procmux$5618": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:83.20-83.29|/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:83.17-105.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x" ],
+            "B": [ 294, 295, 296 ],
+            "S": [ 125 ],
+            "Y": [ 297, 298, 299 ]
+          }
+        },
+        "$flatten\\UART_RX.$procmux$5620": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000010",
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:78.16-78.16|/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:59.9-124.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x" ],
+            "B": [ 297, 298, 299, 300, 301, 302 ],
+            "S": [ 176, 174 ],
+            "Y": [ 142, 143, 144 ]
+          }
+        },
+        "$flatten\\UART_RX.$procmux$5622": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:70.20-70.29|/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:70.17-77.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x" ],
+            "B": [ "0", "0", "0" ],
+            "S": [ 173 ],
+            "Y": [ 300, 301, 302 ]
+          }
+        },
+        "$flatten\\UART_RX.$shift$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94$5491": {
+          "hide_name": 1,
+          "type": "$shift",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000001",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94.25-94.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1" ],
+            "B": [ 46, 47, 48, 49 ],
+            "Y": [ 245, 246, 247, 248, 249, 250, 251, 252 ]
+          }
+        },
+        "$flatten\\UART_RX.$shift$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94$5495": {
+          "hide_name": 1,
+          "type": "$shift",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000001",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94.25-94.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 244 ],
+            "B": [ 46, 47, 48, 49 ],
+            "Y": [ 253, 254, 255, 256, 257, 258, 259, 260 ]
+          }
+        },
+        "$flatten\\UART_TX.$eq$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:48$5503": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:48.33-48.50"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 23, 24, 25 ],
+            "B": [ "1", "1", "1" ],
+            "Y": [ 197 ]
+          }
+        },
+        "$flatten\\UART_TX.$procmux$5520": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:48.33-48.50|/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:48.29-54.63"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 32, 33, 34 ],
+            "B": [ "0", "0", "0" ],
+            "S": [ 197 ],
+            "Y": [ 303, 304, 305 ]
+          }
+        },
+        "$flatten\\UART_TX.$procmux$5522": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000010",
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:44.20-44.20|/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:31.13-65.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x", "x", "x" ],
+            "B": [ 303, 304, 305, "0", "0", "0" ],
+            "S": [ 156, 160 ],
+            "Y": [ 138, 139, 140 ]
+          }
+        },
+        "$flatten\\UART_TX.$procmux$5527": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000011",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:55.20-55.20|/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:31.13-65.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x" ],
+            "B": [ "1", 306, "0" ],
+            "S": [ 201, 156, 160 ],
+            "Y": [ 124 ]
+          }
+        },
+        "$flatten\\UART_TX.$procmux$5546": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000000010",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:55.20-55.20|/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:31.13-65.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x" ],
+            "B": [ "0", "1" ],
+            "S": [ 201, 160 ],
+            "Y": [ 136 ]
+          }
+        },
+        "$flatten\\UART_TX.$shiftx$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:46$5502": {
+          "hide_name": 1,
+          "type": "$shiftx",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:46.43-46.54"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 128, 129, 130, 131, 132, 133, 134, 135 ],
+            "B": [ 23, 24, 25 ],
+            "Y": [ 306 ]
+          }
+        },
+        "BAUD_GEN": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_top.v:24.10-32.2",
+            "module": "baud_gen",
+            "module_hdlname": "baud_gen",
+            "module_src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:3.1-39.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "UART_RX": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_top.v:53.9-66.2",
+            "module": "uart_rx",
+            "module_hdlname": "uart_rx",
+            "module_src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:3.1-128.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "UART_TX": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_top.v:36.9-49.2",
+            "module": "uart_tx",
+            "module_hdlname": "uart_tx",
+            "module_src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:3.1-71.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        }
+      },
+      "netnames": {
+        "$auto$alumacc.cc:528:replace_alu$5906": {
+          "hide_name": 1,
+          "bits": [ 29, 30, 31 ],
+          "attributes": {
+            "unused_bits": "0 1 2"
+          }
+        },
+        "$auto$alumacc.cc:528:replace_alu$5909": {
+          "hide_name": 1,
+          "bits": [ 42, 43, 44, 45 ],
+          "attributes": {
+            "unused_bits": "0 1 2 3"
+          }
+        },
+        "$auto$alumacc.cc:528:replace_alu$5912": {
+          "hide_name": 1,
+          "bits": [ 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91 ],
+          "attributes": {
+            "unused_bits": "0 1 2 3 4 5 6 7 8 9 10 11 12 13"
+          }
+        },
+        "$auto$alumacc.cc:528:replace_alu$5915": {
+          "hide_name": 1,
+          "bits": [ 109, 110, 111 ],
+          "attributes": {
+            "unused_bits": "0 1 2"
+          }
+        },
+        "$auto$alumacc.cc:529:replace_alu$5907": {
+          "hide_name": 1,
+          "bits": [ 26, 27, 28 ],
+          "attributes": {
+            "unused_bits": "0 1 2"
+          }
+        },
+        "$auto$alumacc.cc:529:replace_alu$5910": {
+          "hide_name": 1,
+          "bits": [ 38, 39, 40, 41 ],
+          "attributes": {
+            "unused_bits": "0 1 2 3"
+          }
+        },
+        "$auto$alumacc.cc:529:replace_alu$5913": {
+          "hide_name": 1,
+          "bits": [ 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77 ],
+          "attributes": {
+            "unused_bits": "0 1 2 3 4 5 6 7 8 9 10 11 12 13"
+          }
+        },
+        "$auto$alumacc.cc:529:replace_alu$5916": {
+          "hide_name": 1,
+          "bits": [ 106, 107, 108 ],
+          "attributes": {
+            "unused_bits": "0 1 2"
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$5772": {
+          "hide_name": 1,
+          "bits": [ 151 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$5776": {
+          "hide_name": 1,
+          "bits": [ 153 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$5780": {
+          "hide_name": 1,
+          "bits": [ 155 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$5785": {
+          "hide_name": 1,
+          "bits": [ 157 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$5789": {
+          "hide_name": 1,
+          "bits": [ 159 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$5793": {
+          "hide_name": 1,
+          "bits": [ 161 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$5798": {
+          "hide_name": 1,
+          "bits": [ 163 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$5802": {
+          "hide_name": 1,
+          "bits": [ 164 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$5807": {
+          "hide_name": 1,
+          "bits": [ 165 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$5811": {
+          "hide_name": 1,
+          "bits": [ 167 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$5820": {
+          "hide_name": 1,
+          "bits": [ 169 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$5824": {
+          "hide_name": 1,
+          "bits": [ 172 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$5829": {
+          "hide_name": 1,
+          "bits": [ 175 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$5833": {
+          "hide_name": 1,
+          "bits": [ 177 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$5837": {
+          "hide_name": 1,
+          "bits": [ 179 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$5841": {
+          "hide_name": 1,
+          "bits": [ 181 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$5846": {
+          "hide_name": 1,
+          "bits": [ 183 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$5850": {
+          "hide_name": 1,
+          "bits": [ 185 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$5855": {
+          "hide_name": 1,
+          "bits": [ 186 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$5859": {
+          "hide_name": 1,
+          "bits": [ 188 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:170:map_fsm$5766": {
+          "hide_name": 1,
+          "bits": [ 189, 190, 191, 192 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:170:map_fsm$5814": {
+          "hide_name": 1,
+          "bits": [ 193, 194, 195, 196 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:74:implement_pattern_cache$5770": {
+          "hide_name": 1,
+          "bits": [ 149 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:74:implement_pattern_cache$5774": {
+          "hide_name": 1,
+          "bits": [ 152 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:74:implement_pattern_cache$5787": {
+          "hide_name": 1,
+          "bits": [ 158 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:74:implement_pattern_cache$5796": {
+          "hide_name": 1,
+          "bits": [ 162 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:74:implement_pattern_cache$5809": {
+          "hide_name": 1,
+          "bits": [ 166 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:74:implement_pattern_cache$5822": {
+          "hide_name": 1,
+          "bits": [ 170 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:74:implement_pattern_cache$5835": {
+          "hide_name": 1,
+          "bits": [ 178 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:74:implement_pattern_cache$5839": {
+          "hide_name": 1,
+          "bits": [ 180 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:74:implement_pattern_cache$5844": {
+          "hide_name": 1,
+          "bits": [ 182 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:74:implement_pattern_cache$5848": {
+          "hide_name": 1,
+          "bits": [ 184 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:74:implement_pattern_cache$5857": {
+          "hide_name": 1,
+          "bits": [ 187 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_dff.cc:234:make_patterns_logic$5863": {
+          "hide_name": 1,
+          "bits": [ 200 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_dff.cc:234:make_patterns_logic$5865": {
+          "hide_name": 1,
+          "bits": [ 205 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_dff.cc:234:make_patterns_logic$5867": {
+          "hide_name": 1,
+          "bits": [ 206 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_dff.cc:234:make_patterns_logic$5876": {
+          "hide_name": 1,
+          "bits": [ 202 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_dff.cc:234:make_patterns_logic$5881": {
+          "hide_name": 1,
+          "bits": [ 203 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_dff.cc:234:make_patterns_logic$5886": {
+          "hide_name": 1,
+          "bits": [ 204 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_dff.cc:234:make_patterns_logic$5892": {
+          "hide_name": 1,
+          "bits": [ 207 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_dff.cc:251:make_patterns_logic$5869": {
+          "hide_name": 1,
+          "bits": [ 123 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_dff.cc:251:make_patterns_logic$5873": {
+          "hide_name": 1,
+          "bits": [ 127 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_dff.cc:251:make_patterns_logic$5878": {
+          "hide_name": 1,
+          "bits": [ 137 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_dff.cc:251:make_patterns_logic$5883": {
+          "hide_name": 1,
+          "bits": [ 141 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_dff.cc:251:make_patterns_logic$5894": {
+          "hide_name": 1,
+          "bits": [ 145 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_dff.cc:251:make_patterns_logic$5903": {
+          "hide_name": 1,
+          "bits": [ 147 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_reduce.cc:137:opt_pmux$5749": {
+          "hide_name": 1,
+          "bits": [ 201 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_reduce.cc:137:opt_pmux$5753": {
+          "hide_name": 1,
+          "bits": [ 199 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\BAUD_GEN.$0\\baud_tick[0:0]": {
+          "hide_name": 1,
+          "bits": [ 210 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:10.1-37.4"
+          }
+        },
+        "$flatten\\BAUD_GEN.$0\\count[13:0]": {
+          "hide_name": 1,
+          "bits": [ 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:10.1-37.4"
+          }
+        },
+        "$flatten\\BAUD_GEN.$0\\half_baud[0:0]": {
+          "hide_name": 1,
+          "bits": [ 211 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:10.1-37.4"
+          }
+        },
+        "$flatten\\BAUD_GEN.$add$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:34$5510_Y": {
+          "hide_name": 1,
+          "bits": [ 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:34.22-34.35"
+          }
+        },
+        "$flatten\\BAUD_GEN.$eq$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:24$5508_Y": {
+          "hide_name": 1,
+          "bits": [ 208 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:24.12-24.29"
+          }
+        },
+        "$flatten\\BAUD_GEN.$eq$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:27$5509_Y": {
+          "hide_name": 1,
+          "bits": [ 209 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:27.12-27.30"
+          }
+        },
+        "$flatten\\UART_RX.$0$lookahead\\data$5475[7:0]$5478": {
+          "hide_name": 1,
+          "bits": [ 115, 116, 117, 118, 119, 120, 121, 122 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:44.1-126.4"
+          }
+        },
+        "$flatten\\UART_RX.$0\\bit_index[2:0]": {
+          "hide_name": 1,
+          "bits": [ 142, 143, 144 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:44.1-126.4"
+          }
+        },
+        "$flatten\\UART_RX.$0\\first_tick[0:0]": {
+          "hide_name": 1,
+          "bits": [ 146 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:44.1-126.4"
+          }
+        },
+        "$flatten\\UART_RX.$0\\rx_done[0:0]": {
+          "hide_name": 1,
+          "bits": [ 269 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:44.1-126.4"
+          }
+        },
+        "$flatten\\UART_RX.$3$lookahead\\data$5475[7:0]$5487": {
+          "hide_name": 1,
+          "bits": [ 279, 280, 281, 282, 283, 284, 285, 286 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:44.1-126.4"
+          }
+        },
+        "$flatten\\UART_RX.$4$lookahead\\data$5475[7:0]$5489": {
+          "hide_name": 1,
+          "bits": [ 271, 272, 273, 274, 275, 276, 277, 278 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:44.1-126.4"
+          }
+        },
+        "$flatten\\UART_RX.$add$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:103$5498_Y": {
+          "hide_name": 1,
+          "bits": [ 112, 113, 114 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:103.42-103.58"
+          }
+        },
+        "$flatten\\UART_RX.$and$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94$5493_Y": {
+          "hide_name": 1,
+          "bits": [ 234, 235, 236, 237, 238, 239, 240, 241 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94.25-94.52"
+          }
+        },
+        "$flatten\\UART_RX.$eq$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:96$5497_Y": {
+          "hide_name": 1,
+          "bits": [ 198 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:96.28-96.45"
+          }
+        },
+        "$flatten\\UART_RX.$logic_not$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:63$5484_Y": {
+          "hide_name": 1,
+          "bits": [ 243 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:63.31-63.40"
+          }
+        },
+        "$flatten\\UART_RX.$neg$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94$5490_Y": {
+          "hide_name": 1,
+          "bits": [ 46, 47, 48, 49 ],
+          "signed": 1,
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94.25-94.52"
+          }
+        },
+        "$flatten\\UART_RX.$not$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94$5492_Y": {
+          "hide_name": 1,
+          "bits": [ 226, 227, 228, 229, 230, 231, 232, 233 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94.25-94.52"
+          }
+        },
+        "$flatten\\UART_RX.$or$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94$5496_Y": {
+          "hide_name": 1,
+          "bits": [ 261, 262, 263, 264, 265, 266, 267, 268 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94.25-94.52"
+          }
+        },
+        "$flatten\\UART_RX.$procmux$5592_Y": {
+          "hide_name": 1,
+          "bits": [ 287 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\UART_RX.$procmux$5594_Y": {
+          "hide_name": 1,
+          "bits": [ 288 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\UART_RX.$procmux$5603_Y": {
+          "hide_name": 1,
+          "bits": [ 289 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\UART_RX.$procmux$5607_Y": {
+          "hide_name": 1,
+          "bits": [ 290 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\UART_RX.$procmux$5613_Y": {
+          "hide_name": 1,
+          "bits": [ 291, 292, 293 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\UART_RX.$procmux$5616_Y": {
+          "hide_name": 1,
+          "bits": [ 294, 295, 296 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\UART_RX.$procmux$5618_Y": {
+          "hide_name": 1,
+          "bits": [ 297, 298, 299 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\UART_RX.$procmux$5622_Y": {
+          "hide_name": 1,
+          "bits": [ 300, 301, 302 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\UART_RX.$shift$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94$5491_Y": {
+          "hide_name": 1,
+          "bits": [ 245, 246, 247, 248, 249, 250, 251, 252 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94.25-94.52"
+          }
+        },
+        "$flatten\\UART_RX.$shift$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94$5495_Y": {
+          "hide_name": 1,
+          "bits": [ 253, 254, 255, 256, 257, 258, 259, 260 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:94.25-94.52"
+          }
+        },
+        "$flatten\\UART_TX.$add$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:54$5504_Y": {
+          "hide_name": 1,
+          "bits": [ 32, 33, 34 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:54.46-54.62"
+          }
+        },
+        "$flatten\\UART_TX.$eq$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:48$5503_Y": {
+          "hide_name": 1,
+          "bits": [ 197 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:48.33-48.50"
+          }
+        },
+        "$flatten\\UART_TX.$procmux$5520_Y": {
+          "hide_name": 1,
+          "bits": [ 303, 304, 305 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\UART_TX.$procmux$5522_Y": {
+          "hide_name": 1,
+          "bits": [ 138, 139, 140 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\UART_TX.$procmux$5527_Y": {
+          "hide_name": 1,
+          "bits": [ 124 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\UART_TX.$procmux$5546_Y": {
+          "hide_name": 1,
+          "bits": [ 136 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\UART_TX.$shiftx$/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:46$5502_Y": {
+          "hide_name": 1,
+          "bits": [ 306 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:46.43-46.54"
+          }
+        },
+        "BAUD_GEN.baud_tick": {
+          "hide_name": 0,
+          "bits": [ 125 ],
+          "attributes": {
+            "hdlname": "BAUD_GEN baud_tick",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:5.16-5.25"
+          }
+        },
+        "BAUD_GEN.clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "BAUD_GEN clk",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:4.11-4.14"
+          }
+        },
+        "BAUD_GEN.count": {
+          "hide_name": 0,
+          "bits": [ 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63 ],
+          "attributes": {
+            "hdlname": "BAUD_GEN count",
+            "init": "00000000000000",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:8.12-8.17"
+          }
+        },
+        "BAUD_GEN.half_baud": {
+          "hide_name": 0,
+          "bits": [ 173 ],
+          "attributes": {
+            "hdlname": "BAUD_GEN half_baud",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:5.27-5.36"
+          }
+        },
+        "BAUD_GEN.rst_n": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "hdlname": "BAUD_GEN rst_n",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/baud_gen.v:4.16-4.21"
+          }
+        },
+        "UART_RX.baud_tick": {
+          "hide_name": 0,
+          "bits": [ 125 ],
+          "attributes": {
+            "hdlname": "UART_RX baud_tick",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:4.38-4.47"
+          }
+        },
+        "UART_RX.bit_index": {
+          "hide_name": 0,
+          "bits": [ 35, 36, 37 ],
+          "attributes": {
+            "hdlname": "UART_RX bit_index",
+            "init": "000",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:10.11-10.20"
+          }
+        },
+        "UART_RX.clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "UART_RX clk",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:4.29-4.32"
+          }
+        },
+        "UART_RX.data": {
+          "hide_name": 0,
+          "bits": [ 13, 14, 15, 16, 17, 18, 19, 20 ],
+          "attributes": {
+            "hdlname": "UART_RX data",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:5.22-5.26"
+          }
+        },
+        "UART_RX.first_tick": {
+          "hide_name": 0,
+          "bits": [ 148 ],
+          "attributes": {
+            "hdlname": "UART_RX first_tick",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:14.5-14.15"
+          }
+        },
+        "UART_RX.half_baud": {
+          "hide_name": 0,
+          "bits": [ 173 ],
+          "attributes": {
+            "hdlname": "UART_RX half_baud",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:4.11-4.20"
+          }
+        },
+        "UART_RX.rst_n": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "hdlname": "UART_RX rst_n",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:4.22-4.27"
+          }
+        },
+        "UART_RX.rx": {
+          "hide_name": 0,
+          "bits": [ 126 ],
+          "attributes": {
+            "hdlname": "UART_RX rx",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:4.34-4.36"
+          }
+        },
+        "UART_RX.rx_done": {
+          "hide_name": 0,
+          "bits": [ 21 ],
+          "attributes": {
+            "hdlname": "UART_RX rx_done",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:6.16-6.23"
+          }
+        },
+        "UART_RX.rx_prev": {
+          "hide_name": 0,
+          "bits": [ 242 ],
+          "attributes": {
+            "hdlname": "UART_RX rx_prev",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:13.5-13.12"
+          }
+        },
+        "UART_RX.rx_sync1": {
+          "hide_name": 0,
+          "bits": [ 270 ],
+          "attributes": {
+            "hdlname": "UART_RX rx_sync1",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:11.5-11.13"
+          }
+        },
+        "UART_RX.rx_sync2": {
+          "hide_name": 0,
+          "bits": [ 244 ],
+          "attributes": {
+            "hdlname": "UART_RX rx_sync2",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_rx.v:12.5-12.13"
+          }
+        },
+        "UART_RX.state": {
+          "hide_name": 0,
+          "bits": [ 171, 176, 174, 168 ],
+          "attributes": {
+            "onehot": "00000000000000000000000000000001"
+          }
+        },
+        "UART_TX.baud_tick": {
+          "hide_name": 0,
+          "bits": [ 125 ],
+          "attributes": {
+            "hdlname": "UART_TX baud_tick",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:4.11-4.20"
+          }
+        },
+        "UART_TX.bit_index": {
+          "hide_name": 0,
+          "bits": [ 23, 24, 25 ],
+          "attributes": {
+            "hdlname": "UART_TX bit_index",
+            "init": "000",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:10.11-10.20"
+          }
+        },
+        "UART_TX.clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "UART_TX clk",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:4.29-4.32"
+          }
+        },
+        "UART_TX.data": {
+          "hide_name": 0,
+          "bits": [ 5, 6, 7, 8, 9, 10, 11, 12 ],
+          "attributes": {
+            "hdlname": "UART_TX data",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:5.16-5.20"
+          }
+        },
+        "UART_TX.data_reg": {
+          "hide_name": 0,
+          "bits": [ 128, 129, 130, 131, 132, 133, 134, 135 ],
+          "attributes": {
+            "hdlname": "UART_TX data_reg",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:11.11-11.19"
+          }
+        },
+        "UART_TX.rst_n": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "hdlname": "UART_TX rst_n",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:4.22-4.27"
+          }
+        },
+        "UART_TX.state": {
+          "hide_name": 0,
+          "bits": [ 150, 156, 160, 154 ],
+          "attributes": {
+            "onehot": "00000000000000000000000000000001"
+          }
+        },
+        "UART_TX.tx": {
+          "hide_name": 0,
+          "bits": [ 126 ],
+          "attributes": {
+            "hdlname": "UART_TX tx",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:6.16-6.18"
+          }
+        },
+        "UART_TX.tx_busy": {
+          "hide_name": 0,
+          "bits": [ 22 ],
+          "attributes": {
+            "hdlname": "UART_TX tx_busy",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:6.21-6.28"
+          }
+        },
+        "UART_TX.tx_start": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "hdlname": "UART_TX tx_start",
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_tx.v:4.34-4.42"
+          }
+        },
+        "baud_tick": {
+          "hide_name": 0,
+          "bits": [ 125 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_top.v:16.6-16.15"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_top.v:5.11-5.14"
+          }
+        },
+        "half_baud": {
+          "hide_name": 0,
+          "bits": [ 173 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_top.v:17.6-17.15"
+          }
+        },
+        "rst_n": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_top.v:6.11-6.16"
+          }
+        },
+        "rx_data": {
+          "hide_name": 0,
+          "bits": [ 13, 14, 15, 16, 17, 18, 19, 20 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_top.v:10.18-10.25"
+          }
+        },
+        "rx_done": {
+          "hide_name": 0,
+          "bits": [ 21 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_top.v:11.12-11.19"
+          }
+        },
+        "tx": {
+          "hide_name": 0,
+          "bits": [ 126 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_top.v:20.6-20.8"
+          }
+        },
+        "tx_busy": {
+          "hide_name": 0,
+          "bits": [ 22 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_top.v:12.12-12.19"
+          }
+        },
+        "tx_data": {
+          "hide_name": 0,
+          "bits": [ 5, 6, 7, 8, 9, 10, 11, 12 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_top.v:8.17-8.24"
+          }
+        },
+        "tx_start": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "/OpenROAD-flow-scripts/flow/designs/sky130hd/uart/rtl/uart_top.v:7.11-7.19"
+          }
+        }
+      }
+    }
+  }
+}
